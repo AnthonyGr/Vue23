@@ -1,0 +1,178 @@
+main
+
+	p:not([class]), figure:not([class]), blockquote:not([class]),
+	ul:not([class]), ol:not([class])
+		&:not(:last-child)
+			margin-bottom: rem(20)
+	h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class]), p:not([class]), img:not([class]), table:not([class]), ul:not([class]), ol:not([class])
+		&:first-child
+			margin-top: 0
+
+	h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class]), h6:not([class])
+		&:not(.block-title)
+			font-weight: 400
+			margin-bottom: rem(20)
+
+			&:not(:first-child)
+				margin-top: rem(50)
+
+		+ *
+			margin-top: 0
+
+	h1:not([class])
+		font-size: em(40)
+		line-height: normal
+
+	h2:not([class])
+		font-size: em(34)
+		line-height: normal
+
+	h3:not([class])
+		font-size: em(26)
+		line-height: normal
+
+	h4:not([class])
+		font-size: em(18)
+		line-height: normal
+
+	h5:not([class])
+		font-size: em(16)
+		line-height: normal
+
+	figure:not([class])
+		margin: 0
+
+	blockquote:not([class])
+		margin: 0
+		position: relative
+		padding-left: rem(16)
+		> p
+			display: inline
+		+ figcaption
+			opacity: 0.7
+			padding-left: em(16)
+			margin-top: em(5)
+			font-size: em(14)
+
+	img
+		&[height]
+			height: auto
+
+	table:not([class])
+		border-collapse: collapse
+		border: 0
+		background-color: transparent
+		font-size: em(14)
+		thead
+			th, td
+				background-color: transparent
+				text-align: left
+				padding-top: rem(18)
+				padding-bottom: rem(18)
+				font-size: em(18)
+				font-weight: 400
+
+		td, th
+			padding: rem(16) rem(20)
+			font-weight: inherit
+			&:not([valign]), &[valign="middle"]
+				vertical-align: middle
+			&[valign="top"]
+				vertical-align: top
+			&[valign="bottom"]
+				vertical-align: bottom
+
+		td
+			transition: background .3s ease
+
+	table[border="1"]:not([class])
+		min-width: 100%
+		td, th
+			border: 1px solid
+
+		tbody
+			td
+				&:first-child
+					border-left: 0
+
+				&:last-child
+					border-right: 0
+			tr:last-child
+				td
+					border-bottom: 0
+
+	ul, ol
+		&:not([class])
+			&:before
+				display: inline-block
+			ul, ol
+				margin-bottom: rem(20)
+				margin-top: rem(20)
+			li
+				&:before
+					margin-right: rem(10)
+
+				&:not(:first-child)
+					margin-top: rem(16)
+
+	ul
+		&:not([class])
+			> li
+				padding-left: rem(30)
+				position: relative
+				&:before
+					content: ""
+					position: absolute
+					top: rem(7)
+					left: 0
+					border-radius: 50%
+					background: currentColor
+					display: inline-block
+			ul
+				> li
+					&:before
+						content: "—"
+						margin: 0 rem(16) rem(2) 0
+						display: inline-block
+						border-radius: 0
+						width: auto
+						height: auto
+						background: transparent
+						text-indent: 0
+						position: absolute
+						top: 0
+						left: 0
+
+	ol:not([class])
+		counter-reset: list
+		> li
+			padding-left: rem(45)
+			position: relative
+			&:before
+				content: counter(list)
+				counter-increment: list
+				position: absolute
+				top: -3px
+				left: 0
+				width: rem(30)
+				height: rem(30)
+				padding-top: rem(3)
+				display: flex
+				align-items: center
+				justify-content: center
+				font-weight: 400
+				border-radius: 30px
+				font-size: em(13)
+	a
+		&:not([class])
+			color: #eee
+			transition: color .4s
+			&:hover, &:focus
+				color: #eee
+	.table-wrap
+		overflow: auto
+		-ms-overflow-style: none
+		scrollbar-width: none
+		&::-webkit-scrollbar
+			width: 0
+			height: 0

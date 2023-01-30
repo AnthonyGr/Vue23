@@ -1,0 +1,122 @@
+*
+	margin: 0
+	padding: 0
+	border: 0
+	box-sizing: border-box
+html
+	scroll-behavior: smooth
+
+html,
+body
+	height: 100%
+	min-width: $minWidth + px
+
+body
+	margin: 0 auto
+	font-family: $fontFamily
+	color: var(--body-text-color)
+	background-color: var(--body-bg-color)
+	+Vscroll
+input,
+button,
+textarea
+	font-family: $fontFamily
+	font-size: inherit
+	color: inherit
+	border-radius: 0
+	box-shadow: none
+
+select, input, textarea, button
+	appearance: none
+	&:active
+		outline: none
+	&:focus
+		outline: none
+	&:focus-visible
+		outline: none
+
+button
+	font-weight: inherit
+	color: inherit
+	background-color: inherit
+	cursor: pointer
+
+textarea
+	resize: vertical
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea, select, input[type="submit"], button
+	-webkit-appearance: none
+	appearance: none
+	font-family: inherit
+
+input[type="number"]
+	appearance: none
+	-moz-appearance: textfield
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button
+		appearance: none
+		-webkit-appearance: none
+
+input[type="date"],
+input[type="time"]
+	&::-webkit-calendar-picker-indicator
+		opacity: 0
+	&::-webkit-date-and-time-value
+		text-align: left
+
+
+// перебить стили автозаполнения
+input
+	&:-webkit-autofill
+		-webkit-animation-name: autofill
+		-webkit-animation-fill-mode: both
+		-webkit-box-shadow: 0 0 0 30px white inset !important // цвет поля
+		&:hover,
+		&:focus,
+		&:active
+			-webkit-box-shadow: 0 0 0 30px white inset !important // цвет поля
+	&:-internal-autofill-selected
+		color: inherit !important
+		background-color: #fff !important // цвет поля
+
+*::selection
+	color: var(--black)
+	background: var(--second-color)
+
+a
+	color: inherit
+	+hover
+		text-decoration: none
+	&[href^="tel"]
+		white-space: nowrap
+	&:focus-visible
+		outline: none
+	&:-webkit-any-link:focus-visible
+		outline-offset: 0
+
+p,
+figure,
+blockquote
+	color: inherit
+	margin: 0
+	padding: 0
+
+ul,
+ol
+	list-style: none
+
+img
+	max-width: 100%
+	vertical-align: top
+
+video, iframe, svg
+	max-width: 100%
+
+h1,h2,h3,h4,h5,h6
+	font-weight: inherit
+	font-size: inherit
+	padding: 0
+	margin: 0
+
+address
+	font-style: unset

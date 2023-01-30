@@ -1,0 +1,28 @@
+.form
+
+	&__title
+		font-size: em(20)
+		font-weight: 600
+		letter-spacing: 0.03em
+		margin-bottom: em(40)
+	&__inputs
+		margin: 0
+		display: grid
+		grid-gap: em(40) em(24)
+		& +.form__inputs
+			margin-top: em(40)
+		&--2
+			grid-template-columns: repeat(2, 1fr)
+		&--3
+			grid-template-columns: repeat(3, 1fr)
+		&--4
+			grid-template-columns: repeat(4, 1fr)
+		&--5
+			grid-template-columns: repeat(5, 1fr)
+		&-input
+			&--2
+				grid-column: span 2
+			&--3
+				grid-column: span 3
+			&--4
+				grid-column: span 4
