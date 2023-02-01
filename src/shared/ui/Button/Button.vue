@@ -10,7 +10,7 @@ const emits = defineEmits(['press'])
 </script>
 
 <template>
-    <button @click.prevent="emits('press')">{{ label }}</button>
+    <button class="btn" @click.prevent="emits('press')">{{ label }}</button>
 </template>
 
 

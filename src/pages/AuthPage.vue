@@ -1,5 +1,5 @@
 <script setup>
-import AuthByLogin from "../components/AuthByLogin/AuthByLogin.vue";
+import AuthByLogin from "../components/AuthByLogin/ui/AuthByLogin.vue";
 </script>
 
 <template>
